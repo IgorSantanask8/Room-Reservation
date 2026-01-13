@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/hotel")
+@RequestMapping("/hotel/v1")
 public class ReservationController {
 
     @Autowired
