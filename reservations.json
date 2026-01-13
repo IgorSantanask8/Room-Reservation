@@ -1,0 +1,25 @@
+{
+  "end" : "19/01/2026",
+  "id" : 9,
+  "period" : "P7D",
+  "reservationNumber" : 1,
+  "room" : {
+    "capacity" : 3,
+    "dailyPrice" : 50.00,
+    "id" : 1,
+    "number" : 101,
+    "reservation" : null,
+    "status" : "occupied",
+    "type" : "basic"
+  },
+  "start" : "12/01/2026",
+  "status" : "ACTIVE",
+  "user" : {
+    "age" : 23,
+    "cityOrigin" : "Belo horizonte",
+    "cpf" : "12345678910",
+    "escorts" : null,
+    "id" : 2,
+    "name" : "Igor"
+  }
+}
