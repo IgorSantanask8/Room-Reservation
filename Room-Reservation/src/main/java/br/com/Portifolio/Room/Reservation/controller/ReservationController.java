@@ -3,9 +3,11 @@ package br.com.Portifolio.Room.Reservation.controller;
 import br.com.Portifolio.Room.Reservation.dto.ReservationDto;
 import br.com.Portifolio.Room.Reservation.model.Reservation;
 import br.com.Portifolio.Room.Reservation.service.ReservationService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -21,7 +23,7 @@ public class ReservationController {
     @PostMapping("/create/reservation/{cpf}/{number}")
     ResponseEntity<Reservation> createReservation(@PathVariable String cpf,
                                                   @PathVariable Integer number,
-                                                  @RequestBody ReservationDto dto) throws IOException {
+                                                  @RequestBody @Valid ReservationDto dto) throws IOException {
         service.createReservation(cpf, number, dto);
         return ResponseEntity.ok().build();
     }

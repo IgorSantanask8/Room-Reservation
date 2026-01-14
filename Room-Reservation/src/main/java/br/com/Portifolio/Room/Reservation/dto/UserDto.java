@@ -1,7 +1,9 @@
 package br.com.Portifolio.Room.Reservation.dto;
 
-public record UserDto(String name,
-                      String cpf,
-                      Integer age,
-                      String cityOrigin) {
+import jakarta.validation.constraints.NotNull;
+
+public record UserDto(@NotNull String name,
+                      @NotNull String cpf,
+                      @NotNull Integer age,
+                      @NotNull String cityOrigin) {
 }
