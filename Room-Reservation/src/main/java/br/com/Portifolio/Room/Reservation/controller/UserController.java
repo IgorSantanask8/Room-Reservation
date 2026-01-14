@@ -3,6 +3,7 @@ package br.com.Portifolio.Room.Reservation.controller;
 import br.com.Portifolio.Room.Reservation.dto.UserDto;
 import br.com.Portifolio.Room.Reservation.model.User;
 import br.com.Portifolio.Room.Reservation.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,7 @@ public class UserController {
     private UserService service;
 
     @PostMapping("/create/user")
-    ResponseEntity<User> createUser(@RequestBody UserDto dto){
+    ResponseEntity<User> createUser(@RequestBody @Valid UserDto dto){
         service.createUser(dto);
         return ResponseEntity.ok().build();
     }

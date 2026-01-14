@@ -3,6 +3,7 @@ package br.com.Portifolio.Room.Reservation.controller;
 import br.com.Portifolio.Room.Reservation.dto.RoomDto;
 import br.com.Portifolio.Room.Reservation.model.Room;
 import br.com.Portifolio.Room.Reservation.service.RoomService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,7 @@ public class RoomController {
     private RoomService service;
 
     @PostMapping("/create/room")
-    ResponseEntity<Room> createRoom(@RequestBody RoomDto dto){
+    ResponseEntity<Room> createRoom(@RequestBody @Valid RoomDto dto){
         service.createRoom(dto);
         return ResponseEntity.ok().build();
     }
